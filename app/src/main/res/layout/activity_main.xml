@@ -40,5 +40,29 @@
         android:text="Submit"
         android:id="@+id/button"
         android:layout_below="@+id/radioGroup"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"/>
+
+
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:numStars="7"
+        android:id="@+id/rating"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating"
+        android:layout_centerHorizontal="true"
+        android:text="Rate"
+        android:id="@+id/btn"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn"/>
 </RelativeLayout>
