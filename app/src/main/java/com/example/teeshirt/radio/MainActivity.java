@@ -1,5 +1,7 @@
 package com.example.teeshirt.radio;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,9 +19,12 @@ public class MainActivity extends ActionBarActivity {
     public static RadioGroup radioGroup;
     public static RadioButton radio;
     public static Button button;
+
     private static RatingBar rating;
     private static Button btn;
     private static TextView txt;
+
+    private static Button btn3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class MainActivity extends ActionBarActivity {
         onButtonClickListener();
         ratingBarListener();
         buttonClickListener();
+        alertButtonClick();
     }
 
 
@@ -66,6 +72,31 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, String.valueOf(rating.getRating()) ,Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void alertButtonClick(){
+        btn3 = (Button)findViewById(R.id.btn3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertbuilder = new AlertDialog.Builder(MainActivity.this);
+                alertbuilder.setMessage("Do you want to close this App?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog alert = alertbuilder.create();
+                alert.setTitle("Alert!!!");
+                alert.show();
             }
         });
     }
