@@ -2,6 +2,7 @@ package com.example.teeshirt.radio;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,6 +27,8 @@ public class MainActivity extends ActionBarActivity {
 
     private static Button btn3;
 
+    private static Button btn4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class MainActivity extends ActionBarActivity {
         ratingBarListener();
         buttonClickListener();
         alertButtonClick();
+        btn4OnClickListener();
     }
 
 
@@ -97,6 +101,17 @@ public class MainActivity extends ActionBarActivity {
                 AlertDialog alert = alert_builder.create();
                 alert.setTitle("Radio exit");
                 alert.show();
+            }
+        });
+    }
+
+    public void btn4OnClickListener(){
+        btn4 = (Button)findViewById(R.id.btn4);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("com.example.teeshirt.radio.Second");
+                startActivity(intent);
             }
         });
     }
