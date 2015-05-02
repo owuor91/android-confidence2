@@ -27,6 +27,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         onButtonClickListener();
         ratingBarListener();
+        buttonClickListener();
     }
 
 
@@ -56,4 +57,16 @@ public class MainActivity extends ActionBarActivity {
            }
        });
    }
+
+    public void buttonClickListener(){
+        rating = (RatingBar)findViewById(R.id.rating);
+        btn = (Button)findViewById(R.id.btn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, String.valueOf(rating.getRating()) ,Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
