@@ -81,8 +81,8 @@ public class MainActivity extends ActionBarActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alertbuilder = new AlertDialog.Builder(MainActivity.this);
-                alertbuilder.setMessage("Do you want to close this App?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                AlertDialog.Builder alert_builder = new AlertDialog.Builder(MainActivity.this);
+                alert_builder.setMessage("Do you want to close this App?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
@@ -94,8 +94,8 @@ public class MainActivity extends ActionBarActivity {
                     }
                 });
 
-                AlertDialog alert = alertbuilder.create();
-                alert.setTitle("Alert!!!");
+                AlertDialog alert = alert_builder.create();
+                alert.setTitle("Radio exit");
                 alert.show();
             }
         });
